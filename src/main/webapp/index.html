@@ -1,0 +1,39 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="imagens/icones/icon.png"/>
+	<title>Projeto Carro</title>
+	
+
+	<!-- CSS -->
+	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="styles/styles.css" rel="stylesheet">
+
+	<!-- Dependencias angular -->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+
+	<!-- Outras dependencias -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- Módulos -->
+	<script src="app.js"></script>
+
+	<!-- Controllers -->
+	<script src="create/client/CreateClientCtrl.js"></script>
+	<script src="create/brand/CreateBrandCtrl.js"></script>
+	<script src="create/model/CreateModelCtrl.js"></script>
+	<script src="create/vehicle/CreateVehicleCtrl.js"></script>
+
+</head>
+<body ng-app="system">
+	<section ng-include=" 'header.html' " id="header" class="top-header"></section>
+
+	<div class="view-container">
+		<section ng-view="" id="content" class="animate-fade-up"></section>
+	</div>
+</body>
+</html>
