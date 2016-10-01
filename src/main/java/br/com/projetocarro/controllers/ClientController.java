@@ -11,11 +11,13 @@ import br.com.projetocarro.entities.Client;
 
 @RestController
 @RequestMapping("/client")
-public class ClientController {
-	
-	@RequestMapping(value="/create", method=RequestMethod.POST)
-	@ResponseStatus(value=HttpStatus.CREATED)
-	public void registerPerson(@RequestBody Client client) {
-		System.out.println(client.getName() + " " + client.getCpf());
-	}
+public class ClientController
+{
+
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @ResponseStatus(value = HttpStatus.CREATED)
+    public void registerPerson(@RequestBody Client client)
+    {
+        System.out.println(client.getName() + " " + client.getCpf());
+    }
 }

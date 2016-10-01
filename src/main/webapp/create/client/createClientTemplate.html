@@ -1,41 +1,32 @@
 <html>
 <body>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<div class="title bg-primary">
-	   Cadastro de Cliente
-	</div>
-	<div class="container tabsHeader col-md-12 col-sm-12">
-	   <ul class="nav nav-tabs">
-	       <li ng-class="{active: selected(1)}">
-	           <a href="" ng-click="selectTab(1)">Informações Gerais</a>
-	       </li>
-		   <li ng-class="{active: selected(2)}">
-		      <a href="" ng-click="selectTab(2)">Endereço</a>
-		   </li>
-		   <li ng-class="{active: selected(3)}">
-		      <a href="" ng-click="selectTab(3)">Contatos</a>
-		   </li>
-	       <li ng-class="{active: selected(4)}">
-	           <a href="" ng-click="selectTab(4)">Trabalho</a>
-	       </li>
-	   </ul>
-	   <div class="panel panel-primary col-md-12 col-sm-12">
-	       <div id="informacoes" class="register col-md-12 col-sm-12" ng-show="tab === 1">
-		       <section ng-include="'./create/client/generalInformations.html'" class="col-md-12 col-sm-12"></section>
-	       </div>
-	       <div id="endereco" class="register" ng-show="tab === 2">
-	           <section ng-include="'./create/client/address.html'"></section>
-	       </div>
-	       <div id="contato" class="register" ng-show="tab === 3">
-	          <section ng-include="'./create/client/contacts.html'"></section>
-	       </div>
-	       <div id="trabalho" class="register" ng-show="tab === 4">       
-	           <section ng-include="'./create/client/work.html'"></section>
-	       </div>
-	       <div class="botaoCadastrar">
-	           <button type="button" class="btn btn-success" ng-click="register(person)">Cadastrar</button>	       
-	       </div>
-	   </div>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <div class="title bg-primary">Cadastro de Cliente</div>
+    <div class="container tabsHeader col-md-12 col-sm-12">
+        <ul class="nav nav-tabs">
+            <li ng-class="{active: selected(1)}"><a href="" ng-click="selectTab(1)">Informações Gerais</a></li>
+            <li ng-class="{active: selected(2)}"><a href="" ng-click="selectTab(2)">Endereço</a></li>
+            <li ng-class="{active: selected(3)}"><a href="" ng-click="selectTab(3)">Contatos</a></li>
+            <li ng-class="{active: selected(4)}"><a href="" ng-click="selectTab(4)">Trabalho</a></li>
+        </ul>
+        <div class="panel panel-primary col-md-12 col-sm-12">
+            <div id="informacoes" class="register col-md-12 col-sm-12"
+                ng-show="tab === 1">
+                <section ng-include="'./create/client/generalInformations.html'" class="col-md-12 col-sm-12"></section>
+            </div>
+            <div id="endereco" class="register" ng-show="tab === 2">
+                <section ng-include="'./create/client/address.html'"></section>
+            </div>
+            <div id="contato" class="register" ng-show="tab === 3">
+                <section ng-include="'./create/client/contacts.html'"></section>
+            </div>
+            <div id="trabalho" class="register" ng-show="tab === 4">
+                <section ng-include="'./create/client/work.html'"></section>
+            </div>
+            <div class="botaoCadastrar">
+                <button type="button" class="btn btn-success" ng-click="register(person)">Cadastrar</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>

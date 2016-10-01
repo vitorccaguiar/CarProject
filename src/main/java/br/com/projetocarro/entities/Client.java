@@ -2,141 +2,172 @@ package br.com.projetocarro.entities;
 
 import java.util.Date;
 
-public class Client {
-	
-	private String name;
-	private String cpf;
-	private String rg;
-	private String issuingBody;
-	private Date dateOfBirth;
-	private String maritalStatus;
-	private String gender;
-	private String fatherName;
-	private String motherName;
-	private String companyName;
-	private Integer timeWorking;
-	private Double monthlyIncome;
-	private String position;
-	private Address address;
-	private Contacts contacts;
+public class Client
+{
 
-	public String getName() {
-		return name;
-	}
+    private String name;
+    private String cpf;
+    private String rg;
+    private String issuingBody;
+    private Date dateOfBirth;
+    private String maritalStatus;
+    private String gender;
+    private String fatherName;
+    private String motherName;
+    private String companyName;
+    private Integer timeWorking;
+    private Double monthlyIncome;
+    private String position;
+    private Address address;
+    private Contacts contacts;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName()
+    {
+        return name;
+    }
 
-	public String getCpf() {
-		return cpf;
-	}
+    public void setName(String name)
+    {
+        this.name = name;
+    }
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
+    public String getCpf()
+    {
+        return cpf;
+    }
 
-	public String getRg() {
-		return rg;
-	}
+    public void setCpf(String cpf)
+    {
+        this.cpf = cpf;
+    }
 
-	public void setRg(String rg) {
-		this.rg = rg;
-	}
+    public String getRg()
+    {
+        return rg;
+    }
 
-	public String getIssuingBody() {
-		return issuingBody;
-	}
+    public void setRg(String rg)
+    {
+        this.rg = rg;
+    }
 
-	public void setIssuingBody(String issuingBody) {
-		this.issuingBody = issuingBody;
-	}
+    public String getIssuingBody()
+    {
+        return issuingBody;
+    }
 
-	public Date getDateOfBirth() {
-		return dateOfBirth;
-	}
+    public void setIssuingBody(String issuingBody)
+    {
+        this.issuingBody = issuingBody;
+    }
 
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
+    public Date getDateOfBirth()
+    {
+        return dateOfBirth;
+    }
 
-	public String getMaritalStatus() {
-		return maritalStatus;
-	}
+    public void setDateOfBirth(Date dateOfBirth)
+    {
+        this.dateOfBirth = dateOfBirth;
+    }
 
-	public void setMaritalStatus(String maritalStatus) {
-		this.maritalStatus = maritalStatus;
-	}
+    public String getMaritalStatus()
+    {
+        return maritalStatus;
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public void setMaritalStatus(String maritalStatus)
+    {
+        this.maritalStatus = maritalStatus;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public String getGender()
+    {
+        return gender;
+    }
 
-	public String getFathersName() {
-		return fatherName;
-	}
+    public void setGender(String gender)
+    {
+        this.gender = gender;
+    }
 
-	public void setFathersName(String fathersName) {
-		this.fatherName = fathersName;
-	}
+    public String getFathersName()
+    {
+        return fatherName;
+    }
 
-	public String getMotherName() {
-		return motherName;
-	}
+    public void setFathersName(String fathersName)
+    {
+        this.fatherName = fathersName;
+    }
 
-	public void setMotherName(String motherName) {
-		this.motherName = motherName;
-	}
+    public String getMotherName()
+    {
+        return motherName;
+    }
 
-	public Address getAddress() {
-		return address;
-	}
+    public void setMotherName(String motherName)
+    {
+        this.motherName = motherName;
+    }
 
-	public void setAddress(Address address) {
-		this.address = address;
-	}
+    public Address getAddress()
+    {
+        return address;
+    }
 
-	public Contacts getContacts() {
-		return contacts;
-	}
+    public void setAddress(Address address)
+    {
+        this.address = address;
+    }
 
-	public void setContacts(Contacts contacts) {
-		this.contacts = contacts;
-	}
+    public Contacts getContacts()
+    {
+        return contacts;
+    }
 
-	public String getCompanyName() {
-		return companyName;
-	}
+    public void setContacts(Contacts contacts)
+    {
+        this.contacts = contacts;
+    }
 
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
+    public String getCompanyName()
+    {
+        return companyName;
+    }
 
-	public Integer getTimeWorking() {
-		return timeWorking;
-	}
+    public void setCompanyName(String companyName)
+    {
+        this.companyName = companyName;
+    }
 
-	public void setTimeWorking(Integer timeWorking) {
-		this.timeWorking = timeWorking;
-	}
+    public Integer getTimeWorking()
+    {
+        return timeWorking;
+    }
 
-	public Double getMonthlyIncome() {
-		return monthlyIncome;
-	}
+    public void setTimeWorking(Integer timeWorking)
+    {
+        this.timeWorking = timeWorking;
+    }
 
-	public void setMonthlyIncome(Double monthlyIncome) {
-		this.monthlyIncome = monthlyIncome;
-	}
+    public Double getMonthlyIncome()
+    {
+        return monthlyIncome;
+    }
 
-	public String getPosition() {
-		return position;
-	}
+    public void setMonthlyIncome(Double monthlyIncome)
+    {
+        this.monthlyIncome = monthlyIncome;
+    }
 
-	public void setPosition(String position) {
-		this.position = position;
-	}
+    public String getPosition()
+    {
+        return position;
+    }
+
+    public void setPosition(String position)
+    {
+        this.position = position;
+    }
 }
