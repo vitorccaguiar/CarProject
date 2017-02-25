@@ -18,6 +18,6 @@ public class ClientController
     @ResponseStatus(value = HttpStatus.CREATED)
     public void registerPerson(@RequestBody Client client)
     {
-        System.out.println(client.getName() + " " + client.getCpf());
+        System.out.println(client.getName() + " " + client.getRegister());
     }
 }

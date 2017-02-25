@@ -3,34 +3,56 @@ package br.com.projetocarro.entities;
 public class Address
 {
 
-    private String cep;
-    private String state;
+    private String type;
+    private String streetName;
+    private String complement;
+    private String neighbourhood;
     private String city;
-    private String district;
-    private Integer number;
-    private String nationality;
+    private String state;
+    private String cep;
+    private Integer houseNumber;
     private Boolean hasOwnHouse;
     private Double valueOfTheHouse;
     private Integer timeLiving;
 
-    public String getCep()
+    public String getType()
     {
-        return cep;
+        return type;
     }
 
-    public void setCep(String cep)
+    public void setType(String type)
     {
-        this.cep = cep;
+        this.type = type;
     }
 
-    public String getState()
+    public String getStreetName()
     {
-        return state;
+        return streetName;
     }
 
-    public void setState(String state)
+    public void setStreetName(String streetName)
     {
-        this.state = state;
+        this.streetName = streetName;
+    }
+
+    public String getComplement()
+    {
+        return complement;
+    }
+
+    public void setComplement(String complement)
+    {
+        this.complement = complement;
+    }
+
+    public String getNeighbourhood()
+    {
+        return neighbourhood;
+    }
+
+    public void setNeighbourhood(String neighbourhood)
+    {
+        this.neighbourhood = neighbourhood;
     }
 
     public String getCity()
@@ -43,34 +65,34 @@ public class Address
         this.city = city;
     }
 
-    public String getDistrict()
+    public String getState()
     {
-        return district;
+        return state;
     }
 
-    public void setDistrict(String district)
+    public void setState(String state)
     {
-        this.district = district;
+        this.state = state;
     }
 
-    public Integer getNumber()
+    public String getCep()
     {
-        return number;
+        return cep;
     }
 
-    public void setNumber(Integer number)
+    public void setCep(String cep)
     {
-        this.number = number;
+        this.cep = cep;
     }
 
-    public String getNationality()
+    public Integer getHouseNumber()
     {
-        return nationality;
+        return houseNumber;
     }
 
-    public void setNationality(String nationality)
+    public void setHouseNumber(Integer houseNumber)
     {
-        this.nationality = nationality;
+        this.houseNumber = houseNumber;
     }
 
     public Boolean getHasOwnHouse()
@@ -102,4 +124,5 @@ public class Address
     {
         this.timeLiving = timeLiving;
     }
+
 }

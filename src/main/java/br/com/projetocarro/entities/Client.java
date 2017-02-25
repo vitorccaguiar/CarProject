@@ -1,25 +1,42 @@
 package br.com.projetocarro.entities;
 
 import java.util.Date;
+import java.util.List;
 
 public class Client
 {
 
+    private String type;
     private String name;
-    private String cpf;
+    private String register;
+    private Date dateOfBirth;
     private String rg;
     private String issuingBody;
-    private Date dateOfBirth;
-    private String maritalStatus;
     private String gender;
+    private String maritalStatus;
+    private String countryOfBirth;
+    private String stateOfBirth;
+    private List<Address> address;
     private String fatherName;
     private String motherName;
     private String companyName;
     private Integer timeWorking;
+    private Contacts contacts;
     private Double monthlyIncome;
     private String position;
-    private Address address;
-    private Contacts contacts;
+    // Falta referencia pessoal
+    private BankAccount bankAccount;
+    private Vehicle vehicle;
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public void setType(String type)
+    {
+        this.type = type;
+    }
 
     public String getName()
     {
@@ -31,14 +48,24 @@ public class Client
         this.name = name;
     }
 
-    public String getCpf()
+    public String getRegister()
     {
-        return cpf;
+        return register;
     }
 
-    public void setCpf(String cpf)
+    public void setRegister(String register)
     {
-        this.cpf = cpf;
+        this.register = register;
+    }
+
+    public Date getDateOfBirth()
+    {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth)
+    {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getRg()
@@ -61,14 +88,14 @@ public class Client
         this.issuingBody = issuingBody;
     }
 
-    public Date getDateOfBirth()
+    public String getGender()
     {
-        return dateOfBirth;
+        return gender;
     }
 
-    public void setDateOfBirth(Date dateOfBirth)
+    public void setGender(String gender)
     {
-        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
     }
 
     public String getMaritalStatus()
@@ -81,24 +108,44 @@ public class Client
         this.maritalStatus = maritalStatus;
     }
 
-    public String getGender()
+    public String getCountryOfBirth()
     {
-        return gender;
+        return countryOfBirth;
     }
 
-    public void setGender(String gender)
+    public void setCountryOfBirth(String countryOfBirth)
     {
-        this.gender = gender;
+        this.countryOfBirth = countryOfBirth;
     }
 
-    public String getFathersName()
+    public String getStateOfBirth()
+    {
+        return stateOfBirth;
+    }
+
+    public void setStateOfBirth(String stateOfBirth)
+    {
+        this.stateOfBirth = stateOfBirth;
+    }
+
+    public List<Address> getAddress()
+    {
+        return address;
+    }
+
+    public void setAddress(List<Address> address)
+    {
+        this.address = address;
+    }
+
+    public String getFatherName()
     {
         return fatherName;
     }
 
-    public void setFathersName(String fathersName)
+    public void setFatherName(String fatherName)
     {
-        this.fatherName = fathersName;
+        this.fatherName = fatherName;
     }
 
     public String getMotherName()
@@ -109,26 +156,6 @@ public class Client
     public void setMotherName(String motherName)
     {
         this.motherName = motherName;
-    }
-
-    public Address getAddress()
-    {
-        return address;
-    }
-
-    public void setAddress(Address address)
-    {
-        this.address = address;
-    }
-
-    public Contacts getContacts()
-    {
-        return contacts;
-    }
-
-    public void setContacts(Contacts contacts)
-    {
-        this.contacts = contacts;
     }
 
     public String getCompanyName()
@@ -151,6 +178,16 @@ public class Client
         this.timeWorking = timeWorking;
     }
 
+    public Contacts getContacts()
+    {
+        return contacts;
+    }
+
+    public void setContacts(Contacts contacts)
+    {
+        this.contacts = contacts;
+    }
+
     public Double getMonthlyIncome()
     {
         return monthlyIncome;
@@ -169,5 +206,25 @@ public class Client
     public void setPosition(String position)
     {
         this.position = position;
+    }
+
+    public BankAccount getBankAccount()
+    {
+        return bankAccount;
+    }
+
+    public void setBankAccount(BankAccount bankAccount)
+    {
+        this.bankAccount = bankAccount;
+    }
+
+    public Vehicle getVehicle()
+    {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle)
+    {
+        this.vehicle = vehicle;
     }
 }
