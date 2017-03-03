@@ -8,6 +8,12 @@ app.controller('RegisterClientCtrl', function($scope, $http) {
     
     $scope.selectTab = function(number) {
         $scope.tab = number;
+        for (var i = 1; i <= 4; i++) {
+            if (i != number) {
+                $("#" + i).removeClass("active");
+            }
+        }
+        $("#" + number).addClass("active");
     }
 
     $scope.selected = function(number) {
