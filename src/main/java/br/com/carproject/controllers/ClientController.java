@@ -20,11 +20,4 @@ public class ClientController
     {
         System.out.println(client.getName() + " " + client.getRegister());
     }
-
-    @RequestMapping(value = "/search/cep", method = RequestMethod.GET)
-    @ResponseStatus(value = HttpStatus.OK)
-    public void searchCep()
-    {
-
-    }
 }

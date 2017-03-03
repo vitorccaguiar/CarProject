@@ -17,31 +17,41 @@ app.controller('RegisterClientCtrl', function($scope, $http) {
     $scope.register = function(client) {
         $http.post('client/create', client);
     }
-    
-    $scope.searchCep = function() {
-        $http.post('client/search/cep', client);
-    };
-    
-    $scope.consulta = function() {
-        var cep = document.getElementById("inputCep").value;
-        cep = cep.replace(/[^0-9]/, "");
+
+    $scope.searchCep = function(type) {
+        if (type === "home") {
+            var idCep = "#inputHomeCep";
+            var street = "#inputHomeStreetName";
+            var neighbourhood = "#inputHomeNeighbourhood";
+            var city = "#inputHomeCity";
+            var uf = "#inputHomeState";
+        }else {
+            var idCep = "#inputBusinessCep";
+            var street = "#inputBusinessStreetName";
+            var neighbourhood = "#inputBusinessNeighbourhood";
+            var city = "#inputBusinessCity";
+            var uf = "#inputBusinessState";
+        }
+
+        var cep = $(idCep).val();
         var url = "http://viacep.com.br/ws/"+cep+"/json/";
         
         if (cep === "") {
-            document.getElementById("inputRua").value = "";
-            document.getElementById("inputNeighbourhood").value = "";
-            document.getElementById("inputCity").value = "";
-            document.getElementById("inputState").value = "";
+            $(rua).val("");
+            $(neighbourhood).val("");
+            $(city).val("");
+            $(uf).val("");
         }
-        $.getJSON(url, function(dadosRetorno){
-            try{
-            // Insere os dados em cada campo
-            document.getElementById("inputRua").value = dadosRetorno.logradouro;
-            document.getElementById("inputNeighbourhood").value = dadosRetorno.bairro;
-            document.getElementById("inputCity").value = dadosRetorno.localidade;
-            document.getElementById("inputState").value = dadosRetorno.uf;
-            }catch(ex){}
-            
+
+        $.getJSON(url, function(dadosRetorno) {
+            try {
+                $(street).val(dadosRetorno.logradouro);
+                $(neighbourhood).val(dadosRetorno.bairro);
+                $(city).val(dadosRetorno.localidade);
+                $(uf).val(dadosRetorno.uf);
+            }catch(ex) {
+
+            }
         });
-    }
+    };
 });

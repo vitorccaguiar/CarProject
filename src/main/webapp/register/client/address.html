@@ -1,58 +1,94 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <form name="formEnd">
+    <p class="title bg-info" style="margin: 0px 0px 10px 0px">Residencial</p>
     <div class="row">
-        <div class="form-group col-md-2 col-sm-4">
-            <label for="inputCep">CEP</label>
-            <input id="inputCep" name="inputCep" class="form-control" type="text" maxlength="9" ng-model="address[0].cep" placeholder="______-__" mask="99999-999" clean="true" required limit/>
+        <div class="form-group col-md-2 col-sm-2">
+            <label for="inputHomeCep">CEP</label>
+            <input id="inputHomeCep" name="inputHomeCep" class="form-control" type="text" maxlength="9" ng-model="address[0].cep" placeholder="______-__" mask="99999-999" clean="true" required limit/>
         </div>
         <div class="form-group col-md-1 col-sm-1">
-            <button type="button" class="btn btn-success" style="margin-top: 30px" ng-click="searchCep(address[0].cep)">Buscar</button>
+            <button type="button" class="btn btn-success" style="margin-top: 30px" ng-click="searchCep('home')">Buscar</button>
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-md-2 col-sm-4">
-            <label for="inputState">Estado</label>
-            <input id="inputState" name="inputState" class="form-control" type="text"/>
+        <div class="form-group col-md-1 col-sm-1">
+            <label for="inputHomeState">UF</label>
+            <input id="inputHomeState" name="inputHomeState" class="form-control" type="text"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
-            <label for="inputCity">Cidade</label>
-            <input id="inputCity" name="inputCity" class="form-control" type="text"/>
+            <label for="inputHomeCity">Cidade</label>
+            <input id="inputHomeCity" name="inputHomeCity" class="form-control" type="text"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
-            <label for="inputNeighbourhood">Bairro</label>
-            <input id="inputNeighbourhood" name="inputNeighbourhood" class="form-control" type="text" />
+            <label for="inputHomeNeighbourhood">Bairro</label>
+            <input id="inputHomeNeighbourhood" name="inputHomeNeighbourhood" class="form-control" type="text" />
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-md-4 col-sm-6">
-            <label for="inputRua">Logradouro</label>
-            <input id="inputRua" name="inputRua" class="form-control" type="text" />
-        </div>
-        <div class="form-group col-md-1 col-sm-2">
-            <label for="inputNumero">Número</label>
-            <input id="inputNumero" name="inputNumero" class="form-control" type="text" maxlength="5"/>
+        <div class="form-group col-md-3 col-sm-4">
+            <label for="inputHomeStreetName">Logradouro</label>
+            <input id="inputHomeStreetName" name="inputHomeStreetName" class="form-control" type="text" />
         </div>
         <div class="form-group col-md-2 col-sm-4">
-            <label for="inputNaturalidade">Naturalidade</label>
-            <input id="inputNaturalidade" name="inputNaturalidade" class="form-control" type="text" />
+            <label for="inputHomeComplement">Complemento</label>
+            <input id="inputHomeComplement" name="inputHomeComplement" class="form-control" type="text"/>
         </div>
     </div>
-    <hr/>
     <div class="row">
-        <div class="form-group col-md-2 col-sm-4">
-            <label for="divCasa">Possui casa própria?</label>
-            <div name="divCasa" class="radio">
+        <div class="form-group col-md-2 col-sm-2">
+            <label for="inputHasOwnHouse">Possui casa própria?</label>
+            <div name="inputHasOwnHouse" class="radio">
                 <label><input type="radio" name="opcao"/>Sim</label>
                 <label><input type="radio" name="opcao"/>Nao</label>
             </div>
         </div>  
         <div class="form-group col-md-2 col-sm-4">
-            <label for="inputImovel">Valor do Imóvel</label>
-            <input id="inputImovel" name="inputImovel" class="form-control" type="text" />
-        </div>  
+            <label for="inputValueOfTheHouse">Valor do Imóvel</label>
+            <input id="inputValueOfTheHouse" name="inputValueOfTheHouse" class="form-control" type="text" />
+        </div>
         <div class="form-group col-md-2 col-sm-4">
-            <label for="inputResidencia">Tempo de Residência</label>
-            <input id="inputResidencia" name="inputResidencia" class="form-control" type="text" />
+            <label for="inputHomeTimeLiving">Tempo de Residência</label>
+            <input id="inputTimeLiving" name="inputTimeLiving" class="form-control" type="text" />
+        </div>
+    </div>
+    <p class="title bg-info" style="margin: 0px 0px 10px 0px">Comercial</p>
+    <div class="row">
+        <div class="form-group col-md-2 col-sm-2">
+            <label for="inputBusinessCep">CEP</label>
+            <input id="inputBusinessCep" name="inputBusinessCep" class="form-control" type="text" maxlength="9" ng-model="address[1].cep" placeholder="______-__" mask="99999-999" clean="true" required limit/>
+        </div>
+        <div class="form-group col-md-1 col-sm-1">
+            <button type="button" class="btn btn-success" style="margin-top: 30px" ng-click="searchCep('business')">Buscar</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-1 col-sm-1">
+            <label for="inputBusinessState">UF</label>
+            <input id="inputBusinessState" name="inputBusinessState" class="form-control" type="text"/>
+        </div>
+        <div class="form-group col-md-2 col-sm-4">
+            <label for="inputBusinessCity">Cidade</label>
+            <input id="inputBusinessCity" name="inputBusinessCity" class="form-control" type="text"/>
+        </div>
+        <div class="form-group col-md-2 col-sm-4">
+            <label for="inputBusinessNeighbourhood">Bairro</label>
+            <input id="inputBusinessNeighbourhood" name="inputBusinessNeighbourhood" class="form-control" type="text" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-3 col-sm-4">
+            <label for="inputBusinessStreetName">Logradouro</label>
+            <input id="inputBusinessStreetName" name="inputBusinessStreetName" class="form-control" type="text" />
+        </div>
+        <div class="form-group col-md-2 col-sm-4">
+            <label for="inputBusinessComplement">Complemento</label>
+            <input id="inputBusinessComplement" name="inputBusinessComplement" class="form-control" type="text"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-2 col-sm-4">
+            <label for="inputBusinessTimeLiving">Tempo de Residência</label>
+            <input id="inputBusinessTimeLiving" name="inputBusinessTimeLiving" class="form-control" type="text" />
         </div>
     </div>
 </form>
