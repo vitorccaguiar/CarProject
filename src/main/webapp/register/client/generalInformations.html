@@ -1,0 +1,54 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<form name="formInfo">
+    <div class="row">
+        <div class="form-group col-md-4 col-sm-4">
+            <label for="inputName">Nome</label>
+            <input id="inputName" name="inputName" class="form-control" type="text" ng-model="client.name"/>
+        </div>
+        <div class="form-group col-md-2 col-sm-4">
+            <label for="inputCpf">CPF</label>
+            <input id="inputCpf" name="inputCpf" class="form-control" type="text" ng-model="client.cpf" placeholder="___.___.___-__" mask="999.999.999-99" clean="true" required limit/>
+        </div>
+        <div class="form-group col-md-1 col-sm-1">
+            <button type="button" class="btn btn-success" style="margin-top: 30px" ng-click="searchCpf(client.cpf)">Verificar</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4 col-sm-6">
+            <label for="inputRg">RG</label>
+            <input id="inputRg" name="inputRg" class="form-control" type="text" ng-model="client.rg"/>
+        </div>
+        <div class="form-group col-md-4 col-sm-6">
+            <label for="inputIssuingBody">Órgão Emissor</label>
+            <input id="inputIssuingBody" name="inputIssuingBody" class="form-control" type="text" ng-model="client.issuingBody"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-2 col-sm-4">
+            <label for="inputDateOfBirth">Data de nascimento</label>
+            <input id="inputDateOfBirth" name="inputDateOfBirth" class="form-control" type="text" ng-model="client.dateOfBirth"/>
+        </div>
+        <div class="form-group col-md-2 col-sm-4">
+            <label for="inputMaritalStatus">Estado Civil</label>
+            <input id="inputMaritalStatus" name="inputMaritalStatus" class="form-control" type="text" ng-model="client.maritalStatus"/>
+        </div>
+        <div class="form-group col-md-4 col-sm-4">
+            <label for="divGender">Sexo</label>
+            <div name="divGender" class="radio">
+                <label><input type="radio" name="opcao" value="Masculino" ng-model="client.gender"/>Masculino</label>
+                <label><input type="radio" name="opcao" value="Feminino" ng-model="client.gender"/>Feminino</label>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="form-group col-md-4 col-sm-4">
+            <label for="inputFatherName">Nome do Pai</label>
+            <input id="inputFatherName" name="inputFatherName" class="form-control" type="text" ng-model="client.fatherName"/>
+        </div>
+        <div class="form-group col-md-4 col-sm-4">
+            <label for="inputMotherName">Nome da Mãe</label>
+            <input id="inputMotherName" name="inputMotherName" class="form-control" type="text" ng-model="client.motherName"/>
+        </div>
+    </div>
+</form>
