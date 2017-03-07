@@ -4,11 +4,15 @@ app.controller('RegisterClientCtrl', function($scope, $http) {
     $scope.tab = 1;
 
     $scope.client = {};
-    $scope.address = [];
+    $scope.addresses = [];
+    $scope.contacts = [];
+    $scope.requiredBankAccount = {};
+    $scope.extraBankAccounts = [];
+    $scope.bankAccounts = $scope.extraBankAccounts.unshift($scope.requiredBankAccount);
     
     $scope.selectTab = function(number) {
         $scope.tab = number;
-        for (var i = 1; i <= 4; i++) {
+        for (var i = 1; i <= 5; i++) {
             if (i != number) {
                 $("#" + i).removeClass("active");
             }
@@ -19,45 +23,40 @@ app.controller('RegisterClientCtrl', function($scope, $http) {
     $scope.selected = function(number) {
         return number === $scope.tab;
     }
-
-    $scope.register = function(client) {
-        $http.post('client/create', client);
+    
+    $scope.addBankAccount = function() {
+        $scope.bankAccounts.push({});
+    }
+    
+    $scope.removeBankAccount = function(index) {
+        $scope.bankAccounts.splice(index, 1);
     }
 
-    $scope.searchCep = function(type) {
-        if (type === "home") {
-            var idCep = "#inputHomeCep";
-            var street = "#inputHomeStreetName";
-            var neighbourhood = "#inputHomeNeighbourhood";
-            var city = "#inputHomeCity";
-            var uf = "#inputHomeState";
-        }else {
-            var idCep = "#inputBusinessCep";
-            var street = "#inputBusinessStreetName";
-            var neighbourhood = "#inputBusinessNeighbourhood";
-            var city = "#inputBusinessCity";
-            var uf = "#inputBusinessState";
-        }
-
-        var cep = $(idCep).val();
+    $scope.searchCep = function(index) {
+        var cep = $scope.addresses[index].cep;
         var url = "http://viacep.com.br/ws/"+cep+"/json/";
         
         if (cep === "") {
-            $(rua).val("");
-            $(neighbourhood).val("");
-            $(city).val("");
-            $(uf).val("");
+            $scope.addresses[index].state = "";
+            $scope.addresses[index].city = "";
+            $scope.addresses[index].neighbourhood = "";
+            $scope.addresses[index].streetName = "";
         }
 
         $.getJSON(url, function(dadosRetorno) {
             try {
-                $(street).val(dadosRetorno.logradouro);
-                $(neighbourhood).val(dadosRetorno.bairro);
-                $(city).val(dadosRetorno.localidade);
-                $(uf).val(dadosRetorno.uf);
+                $scope.addresses[index].state = dadosRetorno.uf;
+                $scope.addresses[index].city = dadosRetorno.localidade;
+                $scope.addresses[index].neighbourhood = dadosRetorno.bairro;
+                $scope.addresses[index].streetName = dadosRetorno.logradouro;
+                $scope.$apply();
             }catch(ex) {
 
             }
         });
     };
+    
+    $scope.register = function(client) {
+        $http.post('client/create', client);
+    }
 });

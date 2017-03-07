@@ -12,7 +12,7 @@ body {
     padding: 20px 15px;
 }
 
-.botaoCadastrar {
+.registerButton {
     width: 100px;
     margin: 0 auto 10px;
 }
@@ -33,4 +33,12 @@ body {
 
 .registerListTabs {
     text-align: center;
+}
+
+#addBankAccountButton {
+    margin-left: 15px;
+}
+
+.removeBankAccountButton {
+	margin-top: 30px;
 }

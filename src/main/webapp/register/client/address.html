@@ -4,91 +4,91 @@
     <div class="row">
         <div class="form-group col-md-2 col-sm-2">
             <label for="inputHomeCep">CEP</label>
-            <input id="inputHomeCep" name="inputHomeCep" class="form-control" type="text" maxlength="9" ng-model="address[0].cep" placeholder="______-__" mask="99999-999" clean="true" required limit/>
+            <input id="inputHomeCep" name="inputHomeCep" class="form-control" type="text" maxlength="9" ng-model="addresses[0].cep" placeholder="______-__" mask="99999-999" clean="true" required limit/>
         </div>
         <div class="form-group col-md-1 col-sm-1">
-            <button type="button" class="btn btn-success" style="margin-top: 30px" ng-click="searchCep('home')">Buscar</button>
+            <button type="button" class="btn btn-success" style="margin-top: 30px" ng-click="searchCep(0)">Buscar</button>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-md-1 col-sm-1">
             <label for="inputHomeState">UF</label>
-            <input id="inputHomeState" name="inputHomeState" class="form-control" type="text"/>
+            <input id="inputHomeState" name="inputHomeState" class="form-control" type="text" ng-model="addresses[0].state"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputHomeCity">Cidade</label>
-            <input id="inputHomeCity" name="inputHomeCity" class="form-control" type="text"/>
+            <input id="inputHomeCity" name="inputHomeCity" class="form-control" type="text" ng-model="addresses[0].city"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputHomeNeighbourhood">Bairro</label>
-            <input id="inputHomeNeighbourhood" name="inputHomeNeighbourhood" class="form-control" type="text" />
+            <input id="inputHomeNeighbourhood" name="inputHomeNeighbourhood" class="form-control" type="text" ng-model="addresses[0].neighbourhood"/>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-md-3 col-sm-4">
             <label for="inputHomeStreetName">Logradouro</label>
-            <input id="inputHomeStreetName" name="inputHomeStreetName" class="form-control" type="text" />
+            <input id="inputHomeStreetName" name="inputHomeStreetName" class="form-control" type="text" ng-model="addresses[0].streetName"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputHomeComplement">Complemento</label>
-            <input id="inputHomeComplement" name="inputHomeComplement" class="form-control" type="text"/>
+            <input id="inputHomeComplement" name="inputHomeComplement" class="form-control" type="text" ng-model="addresses[0].complement"/>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-md-2 col-sm-2">
             <label for="inputHasOwnHouse">Possui casa própria?</label>
-            <div name="inputHasOwnHouse" class="radio">
+            <div name="inputHasOwnHouse" class="radio" ng-model="addresses[0].hasOwnHouse">
                 <label><input type="radio" name="opcao"/>Sim</label>
                 <label><input type="radio" name="opcao"/>Nao</label>
             </div>
         </div>  
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputValueOfTheHouse">Valor do Imóvel</label>
-            <input id="inputValueOfTheHouse" name="inputValueOfTheHouse" class="form-control" type="text" />
+            <input id="inputValueOfTheHouse" name="inputValueOfTheHouse" class="form-control" type="text" placeholder="R$" ng-model="addresses[0].valueOfTheHouse"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputHomeTimeLiving">Tempo de Residência</label>
-            <input id="inputTimeLiving" name="inputTimeLiving" class="form-control" type="text" />
+            <input id="inputTimeLiving" name="inputTimeLiving" class="form-control" type="text" ng-model="addresses[0].timeLiving"/>
         </div>
     </div>
     <p class="title bg-info" style="margin: 0px 0px 10px 0px">Comercial</p>
     <div class="row">
         <div class="form-group col-md-2 col-sm-2">
             <label for="inputBusinessCep">CEP</label>
-            <input id="inputBusinessCep" name="inputBusinessCep" class="form-control" type="text" maxlength="9" ng-model="address[1].cep" placeholder="______-__" mask="99999-999" clean="true" required limit/>
+            <input id="inputBusinessCep" name="inputBusinessCep" class="form-control" type="text" maxlength="9" ng-model="addresses[1].cep" placeholder="______-__" mask="99999-999" clean="true" required limit/>
         </div>
         <div class="form-group col-md-1 col-sm-1">
-            <button type="button" class="btn btn-success" style="margin-top: 30px" ng-click="searchCep('business')">Buscar</button>
+            <button type="button" class="btn btn-success" style="margin-top: 30px" ng-click="searchCep(1)">Buscar</button>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-md-1 col-sm-1">
             <label for="inputBusinessState">UF</label>
-            <input id="inputBusinessState" name="inputBusinessState" class="form-control" type="text"/>
+            <input id="inputBusinessState" name="inputBusinessState" class="form-control" type="text" ng-model="addresses[1].state"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputBusinessCity">Cidade</label>
-            <input id="inputBusinessCity" name="inputBusinessCity" class="form-control" type="text"/>
+            <input id="inputBusinessCity" name="inputBusinessCity" class="form-control" type="text" ng-model="addresses[1].city"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputBusinessNeighbourhood">Bairro</label>
-            <input id="inputBusinessNeighbourhood" name="inputBusinessNeighbourhood" class="form-control" type="text" />
+            <input id="inputBusinessNeighbourhood" name="inputBusinessNeighbourhood" class="form-control" type="text" ng-model="addresses[1].neighbourhood"/>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-md-3 col-sm-4">
             <label for="inputBusinessStreetName">Logradouro</label>
-            <input id="inputBusinessStreetName" name="inputBusinessStreetName" class="form-control" type="text" />
+            <input id="inputBusinessStreetName" name="inputBusinessStreetName" class="form-control" type="text" ng-model="addresses[1].streetName"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputBusinessComplement">Complemento</label>
-            <input id="inputBusinessComplement" name="inputBusinessComplement" class="form-control" type="text"/>
+            <input id="inputBusinessComplement" name="inputBusinessComplement" class="form-control" type="text" ng-model="addresses[1].complement"/>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputBusinessTimeLiving">Tempo de Residência</label>
-            <input id="inputBusinessTimeLiving" name="inputBusinessTimeLiving" class="form-control" type="text" />
+            <input id="inputBusinessTimeLiving" name="inputBusinessTimeLiving" class="form-control" type="text" ng-model="addresses[1].timeLiving"/>
         </div>
     </div>
 </form>

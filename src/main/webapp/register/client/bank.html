@@ -1,0 +1,52 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<form id="formBank" name="formBank">
+    <div class="row">
+        <button id="addBankAccountButton" type="button" class="btn btn-success" ng-click="addBankAccount()">Adicionar Conta Bancária</button>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="form-group col-md-4 col-sm-4">
+            <label for="inputNameOfTheBank">Nome do Banco</label>
+            <select id="inputNameOfTheBank" class="form-control" ng-model="requiredBankAccount.name">
+                <option value="">Selecione</option>
+                <option value="Banco do Brasil">Banco do Brasil</option>
+                <option value="Itaú">Itaú</option>
+                <option value="Caixa Econômica Federal">Caixa Econômica Federal</option>
+                <option value="Santander">Santander</option>
+                <option value="Bradesco">Bradesco</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2 col-sm-=4">
+            <label for="inputAgencyNumber">Número da Agência</label>
+            <input id="inputAgencyNumber" name="inputAgencyNumber" class="form-control" type="text" ng-model="requiredBankAccount.agencyNumber"/>
+        </div>  
+        <div class="form-group col-md-2 col-sm-4">
+            <label for="inputAccountNumber">Número da Conta</label>
+            <input id="inputAccountNumber" name="inputAccountNumber" class="form-control" type="text" ng-model="requiredBankAccount.accountNumber"/>
+        </div>
+    </div>
+    <div class="row" ng-repeat="extraBankAccount in extraBankAccounts">
+        <div class="form-group col-md-4 col-sm-4">
+            <label for="inputNameOfTheBank">Nome do Banco</label>
+            <select id="inputNameOfTheBank" class="form-control" ng-model="extraBankAccount.name">
+                <option value="">Selecione</option>
+                <option value="Banco do Brasil">Banco do Brasil</option>
+                <option value="Itaú">Itaú</option>
+                <option value="Caixa Econômica Federal">Caixa Econômica Federal</option>
+                <option value="Santander">Santander</option>
+                <option value="Bradesco">Bradesco</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2 col-sm-=4">
+            <label for="inputAgencyNumber">Número da Agência</label>
+            <input id="inputAgencyNumber" name="inputAgencyNumber" class="form-control" type="text" ng-model="extraBankAccount.agencyNumber"/>
+        </div>  
+        <div class="form-group col-md-2 col-sm-4">
+            <label for="inputAccountNumber">Número da Conta</label>
+            <input id="inputAccountNumber" name="inputAccountNumber" class="form-control" type="text" ng-model="extraBankAccount.accountNumber"/>
+        </div>
+        <div class="form-group col-md-2 col-sm-4">
+            <button id="removeBankAccountButton" type="button" class="removeBankAccountButton btn btn-danger" ng-click="removeBankAccount($index)">Remover Conta Bancária</button>
+        </div>
+    </div>
+</form>

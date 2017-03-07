@@ -28,7 +28,7 @@
             <label for="inputDateOfBirth">Data de nascimento</label>
             <input id="inputDateOfBirth" name="inputDateOfBirth" class="form-control" type="text" ng-model="client.dateOfBirth" placeholder="__/__/____" mask="99/99/9999" clean="true" required limit/>
         </div>
-        <div class="form-group col-md-2 col-sm-2">
+        <div class="form-group col-md-2 col-sm-4">
             <label for="divGender">Sexo</label>
             <div name="divGender" class="radio">
                 <label><input type="radio" name="opcao" value="Masculino" ng-model="client.gender"/>Masculino</label>
@@ -37,7 +37,13 @@
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputMaritalStatus">Estado Civil</label>
-            <input id="inputMaritalStatus" name="inputMaritalStatus" class="form-control" type="text" ng-model="client.maritalStatus"/>
+            <select id="inputMaritalStatus" class="form-control" ng-model="client.maritalStatus">
+                <option value="">Selecione</option>
+                <option value="Casado">Casado</option>
+                <option value="Solteiro">Solteiro</option>
+                <option value=Divorciado>Divorciado</option>
+                <option value="Viúvo">Viúvo</option>
+            </select>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputCityOfBirth">Naturalidade</label>
