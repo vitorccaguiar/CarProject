@@ -1,8 +1,6 @@
 var app = angular.module('system');
 
 app.controller('RegisterClientCtrl', function($scope, $http) {
-    $scope.tab = 1;
-
     $scope.client = {};
     $scope.requiredBankAccount = {};
     $scope.extraBankAccounts = [];
@@ -11,18 +9,12 @@ app.controller('RegisterClientCtrl', function($scope, $http) {
     //$scope.references = $scope.extraReferences.unshift($scope.requiredReference);
     //$scope.bankAccounts = $scope.extraBankAccounts.unshift($scope.requiredBankAccount);
     
-    $scope.selectTab = function(number) {
-        $scope.tab = number;
-        for (var i = 1; i <= 6; i++) {
-            if (i != number) {
-                $("#" + i).removeClass("active");
-            }
-        }
-        $("#" + number).addClass("active");
+    $scope.nextTab = function() {
+        $(".nav-tabs > .active").next("li").find("a").trigger("click");
     }
-
-    $scope.selected = function(number) {
-        return number === $scope.tab;
+    
+    $scope.previousTab = function() {
+        $(".nav-tabs > .active").prev("li").find("a").trigger("click");
     }
     
     $scope.addBankAccount = function() {
