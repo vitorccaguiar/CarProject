@@ -1,6 +1,5 @@
 angular.module('system', [
 
-     // Angular
      "ngRoute",
      "ngMask"
 ])

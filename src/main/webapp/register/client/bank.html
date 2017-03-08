@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <form id="formBank" name="formBank">
     <div class="row">
-        <button id="addBankAccountButton" type="button" class="btn btn-success" ng-click="addBankAccount()">Adicionar Conta Bancária</button>
+        <button type="button" class="addItemButton btn btn-success" ng-click="addBankAccount()">Adicionar Conta Bancária</button>
     </div>
     <br/>
     <div class="row">
@@ -40,13 +40,13 @@
         <div class="form-group col-md-2 col-sm-=4">
             <label for="inputAgencyNumber">Número da Agência</label>
             <input id="inputAgencyNumber" name="inputAgencyNumber" class="form-control" type="text" ng-model="extraBankAccount.agencyNumber"/>
-        </div>  
+        </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputAccountNumber">Número da Conta</label>
             <input id="inputAccountNumber" name="inputAccountNumber" class="form-control" type="text" ng-model="extraBankAccount.accountNumber"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
-            <button id="removeBankAccountButton" type="button" class="removeBankAccountButton btn btn-danger" ng-click="removeBankAccount($index)">Remover Conta Bancária</button>
+            <button type="button" class="removeItemButton btn btn-danger" ng-click="removeBankAccount($index)">Remover Conta Bancária</button>
         </div>
     </div>
 </form>

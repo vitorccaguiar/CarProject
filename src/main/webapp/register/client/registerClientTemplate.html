@@ -5,31 +5,35 @@
     <div class="container col-md-12 col-sm-12">
         <div>
             <ul class="nav nav-tabs nav-justified">
-                <li id="1" class="registerListTabs col-md-2 col-sm-2 active" style="padding: 0px"><a href="" ng-click="selectTab(1)">Informações Gerais</a></li>
-                <li id="2" class="registerListTabs col-md-1 col-sm-1" style="padding: 0px"><a href="" ng-click="selectTab(2)">Endereço</a></li>
-                <li id="3" class="registerListTabs col-md-1 col-sm-1" style="padding: 0px"><a href="" ng-click="selectTab(3)">Contatos</a></li>
-                <li id="4" class="registerListTabs col-md-1 col-sm-1" style="padding: 0px"><a href="" ng-click="selectTab(4)">Trabalho</a></li>
-                <li id="5" class="registerListTabs col-md-1 col-sm-1" style="padding: 0px"><a href="" ng-click="selectTab(5)">Banco</a></li>
+                <li id="1" class="registerListTabs col-md-2 col-sm-2 active"><a href="" ng-click="selectTab(1)">Informações Gerais</a></li>
+                <li id="2" class="registerListTabs col-md-1 col-sm-1"><a href="" ng-click="selectTab(2)">Endereço</a></li>
+                <li id="3" class="registerListTabs col-md-1 col-sm-1"><a href="" ng-click="selectTab(3)">Contato</a></li>
+                <li id="4" class="registerListTabs col-md-1 col-sm-1"><a href="" ng-click="selectTab(4)">Trabalho</a></li>
+                <li id="5" class="registerListTabs col-md-1 col-sm-1"><a href="" ng-click="selectTab(5)">Referência</a></li>
+                <li id="6" class="registerListTabs col-md-1 col-sm-1"><a href="" ng-click="selectTab(6)">Banco</a></li>
             </ul>
         </div>
         <div class="tab-content panel panel-primary col-md-12 col-sm-12">
-            <div id="information" class="register panel-body col-md-12 col-sm-12" ng-show="tab === 1">
+            <div id="information" class="registerForm panel-body col-md-12 col-sm-12" ng-show="tab === 1">
                 <section ng-include="'./register/client/generalInformations.html'"></section>
             </div>
-            <div id="address" class="register panel-body col-md-12 col-sm-12" ng-show="tab === 2">
+            <div id="address" class="registerForm panel-body col-md-12 col-sm-12" ng-show="tab === 2">
                 <section ng-include="'./register/client/address.html'"></section>
             </div>
-            <div id="contact" class="register panel-body col-md-12 col-sm-12" ng-show="tab === 3">
-                <section ng-include="'./register/client/contacts.html'"></section>
+            <div id="contact" class="registerForm panel-body col-md-12 col-sm-12" ng-show="tab === 3">
+                <section ng-include="'./register/client/contact.html'"></section>
             </div>
-            <div id="work" class="register panel-body col-md-12 col-sm-12" ng-show="tab === 4">
+            <div id="work" class="registerForm panel-body col-md-12 col-sm-12" ng-show="tab === 4">
                 <section ng-include="'./register/client/work.html'"></section>
             </div>
-            <div id="bank" class="register panel-body col-md-12 col-sm-12" ng-show="tab === 5">
+            <div id="reference" class="registerForm panel-body col-md-12 col-sm-12" ng-show="tab === 5">
+                <section ng-include="'./register/client/reference.html'"></section>
+            </div>
+            <div id="bank" class="registerForm panel-body col-md-12 col-sm-12" ng-show="tab === 6">
                 <section ng-include="'./register/client/bank.html'"></section>
             </div>
             <div class="registerButton">
-                <button type="button" class="btn btn-success" ng-click="register(client)">Cadastrar</button>
+                <button type="button" class="btn btn-success" ng-click="register()">Cadastrar</button>
             </div>
         </div>
     </div>

@@ -1,27 +1,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<form name="formWork">
+<form name="workForm">
     <div class="row">
         <div class="form-group col-md-4 col-sm-4">
             <label for="inputCompanyName">Nome da Empresa</label>
-            <input id="inputCompanyName" name="inputCompanyName" class="form-control" type="text"/>
+            <input id="inputCompanyName" name="inputCompanyName" type="text" class="form-control" ng-model="client.companyName"/>
         </div>
         <div class="form-group col-md-2 col-sm-=4">
             <label for="inputTimeWorking">Tempo Trabalhado</label>
-            <input id="inputTimeWorking" name="inputTimeWorking" class="form-control" type="text"/>
+            <input id="inputTimeWorking" name="inputTimeWorking" type="text" class="form-control" ng-model="client.timeWorking"/>
         </div>  
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputRenda">Renda Mensal</label>
-            <input id="inputRenda" name="inputRenda" class="form-control" type="text" placeholder="R$"/>
+            <input id="inputRenda" name="inputRenda" type="text" class="form-control" placeholder="R$" ng-model="client.monthlyIncome"/>
         </div>
-    </div>  
+    </div>
     <div class="row">
         <div class="form-group col-md-4 col-sm-4">
             <label for="inputCargo">Cargo</label>
-            <input id="inputCargo" name="inputCargo" class="form-control" type="text"/>
+            <input id="inputCargo" name="inputCargo" type="text" class="form-control" ng-model="client.position"/>
         </div>
         <div class="form-group col-md-2 col-sm-2">
             <label for="inputNumberOfBenefit">Número do Benefício</label>
-            <input id="inputNumberOfBenefit" name="inputNumberOfBenefit" class="form-control" type="text"/>
+            <input id="inputNumberOfBenefit" name="inputNumberOfBenefit" type="text" class="form-control" ng-model="client.numberOfBenefit"/>
         </div>
     </div>
 </form>

@@ -1,0 +1,38 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<form name="referenceForm">
+    <div class="row">
+        <button type="button" class="addItemButton btn btn-success" ng-click="addReference()">Adicionar Referência Pessoal</button>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="form-group col-md-4 col-sm-4">
+            <label for="inputNameOfTheReference">Nome da Referência</label>
+            <input id="inputNameOfTheReference" name="inputNameOfTheReference" class="form-control" type="text" ng-model="requiredReference.name"/>
+        </div>
+        <div class="form-group col-md-2 col-sm-=4">
+            <label for="inputReferenceHomeNumber">Telefone Residencial</label>
+            <input id="inputReferenceHomeNumber" name="inputReferenceHomeNumber" class="form-control" type="text" ng-model="requiredReference.contacts[0].phoneNumber" placeholder="(xx) xxxxx-xxxx" mask="(99) 99999-9999" clean="true" limit/>
+        </div>  
+        <div class="form-group col-md-2 col-sm-4">
+            <label for="inputReferenceCellNumber">Telefone Celular</label>
+            <input id="inputReferenceCellNumber" name="inputReferenceCellNumber" class="form-control" type="text" ng-model="requiredReference.contacts[1].phoneNumber" placeholder="(xx) xxxxx-xxxx" mask="(99) 99999-9999" clean="true" limit/>
+        </div>
+    </div>
+    <div class="row" ng-repeat="extraReference in extraReferences">
+        <div class="form-group col-md-4 col-sm-4">
+            <label for="inputNameOfTheReference">Nome da Referência</label>
+            <input id="inputNameOfTheReference" name="inputNameOfTheReference" class="form-control" type="text" ng-model="extraReference.name"/>
+        </div>
+        <div class="form-group col-md-2 col-sm-=4">
+            <label for="inputReferenceHomeNumber">Telefone Residencial</label>
+            <input id="inputReferenceHomeNumber" name="inputReferenceHomeNumber" class="form-control" type="text" ng-model="extraReference.contacts[0].phoneNumber" placeholder="(xx) xxxxx-xxxx" mask="(99) 99999-9999" clean="true" limit/>
+        </div>  
+        <div class="form-group col-md-2 col-sm-4">
+            <label for="inputReferenceCellNumber">Telefone Celular</label>
+            <input id="inputReferenceCellNumber" name="inputReferenceCellNumber" class="form-control" type="text" ng-model="extraReference.contacts[1].phoneNumber" placeholder="(xx) xxxxx-xxxx" mask="(99) 99999-9999" clean="true" limit/>
+        </div>
+        <div class="form-group col-md-2 col-sm-4">
+            <button type="button" class="removeItemButton btn btn-danger" ng-click="removeReference($index)">Remover Referência Pessoal</button>
+        </div>
+    </div>
+</form>

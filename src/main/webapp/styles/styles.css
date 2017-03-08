@@ -6,7 +6,7 @@ body {
     font-size: 16px;
 }
 
-.register {
+.registerForm {
     margin: 0 auto;
     font-size: 18px;
     padding: 20px 15px;
@@ -26,6 +26,15 @@ body {
     border-radius: 3px;
 }
 
+.bodyTitle {
+    font-size: 20px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    padding: 15px 0 15px 15px;
+    text-align: center;
+    border-radius: 3px;
+}
+
 .tabsHeader {
     padding: 0 15px;
     width: 50%;
@@ -33,12 +42,17 @@ body {
 
 .registerListTabs {
     text-align: center;
+    padding: 0px;
 }
 
-#addBankAccountButton {
+.addItemButton {
     margin-left: 15px;
 }
 
-.removeBankAccountButton {
+.removeItemButton {
 	margin-top: 30px;
+}
+
+.sideButton {
+    margin-top: 30px;
 }
