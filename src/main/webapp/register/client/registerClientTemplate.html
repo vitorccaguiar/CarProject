@@ -4,32 +4,32 @@
     <div class="title bg-primary col-md-12 col-sm-12">Cadastro de Cliente</div>
     <div class="container col-md-12 col-sm-12">
         <div>
-            <ul class="nav nav-tabs nav-justified">
-                <li id="1" class="registerListTabs col-md-2 col-sm-2 active"><a href="" ng-click="selectTab(1)">Informações Gerais</a></li>
-                <li id="2" class="registerListTabs col-md-1 col-sm-1"><a href="" ng-click="selectTab(2)">Endereço</a></li>
-                <li id="3" class="registerListTabs col-md-1 col-sm-1"><a href="" ng-click="selectTab(3)">Contato</a></li>
-                <li id="4" class="registerListTabs col-md-1 col-sm-1"><a href="" ng-click="selectTab(4)">Trabalho</a></li>
-                <li id="5" class="registerListTabs col-md-1 col-sm-1"><a href="" ng-click="selectTab(5)">Referência</a></li>
-                <li id="6" class="registerListTabs col-md-1 col-sm-1"><a href="" ng-click="selectTab(6)">Banco</a></li>
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+                <li role="tablist" class="registerListTabs col-md-2 col-sm-2 active"><a href="" data-target="#information" data-toggle="tab">Informações Gerais</a></li>
+                <li role="tablist" class="registerListTabs col-md-1 col-sm-1"><a href="" data-target="#address" data-toggle="tab">Endereço</a></li>
+                <li role="tablist" class="registerListTabs col-md-1 col-sm-1"><a href="" data-target="#contact" data-toggle="tab">Contato</a></li>
+                <li role="tablist" class="registerListTabs col-md-1 col-sm-1"><a href="" data-target="#work" data-toggle="tab">Trabalho</a></li>
+                <li role="tablist" class="registerListTabs col-md-1 col-sm-1"><a href="" data-target="#reference" data-toggle="tab">Referência</a></li>
+                <li role="tablist" class="registerListTabs col-md-1 col-sm-1"><a href="" data-target="#bank" data-toggle="tab">Banco</a></li>
             </ul>
         </div>
         <div class="tab-content panel panel-primary col-md-12 col-sm-12">
-            <div id="information" class="registerForm panel-body col-md-12 col-sm-12" ng-show="tab === 1">
+            <div id="information" role="tabpanel" class="registerForm panel-body col-md-12 col-sm-12 tab-pane fade in active">
                 <section ng-include="'./register/client/generalInformations.html'"></section>
             </div>
-            <div id="address" class="registerForm panel-body col-md-12 col-sm-12" ng-show="tab === 2">
+            <div id="address" role="tabpanel" class="registerForm panel-body col-md-12 col-sm-12 tab-pane fade">
                 <section ng-include="'./register/client/address.html'"></section>
             </div>
-            <div id="contact" class="registerForm panel-body col-md-12 col-sm-12" ng-show="tab === 3">
-                <section ng-include="'./register/client/contact.html'"></section>
+            <div id="contact" role="tabpanel" class="registerForm panel-body col-md-12 col-sm-12 tab-pane fade">
+                 <section ng-include="'./register/client/contact.html'"></section>
             </div>
-            <div id="work" class="registerForm panel-body col-md-12 col-sm-12" ng-show="tab === 4">
+            <div id="work" role="tabpanel" class="registerForm panel-body col-md-12 col-sm-12 tab-pane fade">
                 <section ng-include="'./register/client/work.html'"></section>
             </div>
-            <div id="reference" class="registerForm panel-body col-md-12 col-sm-12" ng-show="tab === 5">
+            <div id="reference" role="tabpanel" class="registerForm panel-body col-md-12 col-sm-12 tab-pane fade">
                 <section ng-include="'./register/client/reference.html'"></section>
             </div>
-            <div id="bank" class="registerForm panel-body col-md-12 col-sm-12" ng-show="tab === 6">
+            <div id="bank" role="tabpanel" class="registerForm panel-body col-md-12 col-sm-12 tab-pane fade">
                 <section ng-include="'./register/client/bank.html'"></section>
             </div>
             <div class="registerButton">
