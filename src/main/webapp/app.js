@@ -15,5 +15,9 @@ angular.module('system', [
          templateUrl: 'register/vehicle/registerVehicleTemplate.html',
          controller: 'RegisterVehicleCtrl'
      })
+     .when('/search/cep', {
+         templateUrl: 'search/cep/searchCep.html',
+         controller: 'SearchCepCtrl'
+     })
      .otherwise({redirectTo:'/'});
 }]);

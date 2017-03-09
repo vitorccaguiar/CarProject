@@ -33,11 +33,6 @@ body {
     border-radius: 3px;
 }
 
-.tabsHeader {
-    padding: 0 15px;
-    width: 50%;
-}
-
 .registerListTabs {
     text-align: center;
     padding: 0px;
@@ -53,4 +48,9 @@ body {
 
 .sideButton {
     margin-top: 30px;
+}
+
+.formPadding {
+    padding-left: 15px;
+    padding-right: 15px;
 }
