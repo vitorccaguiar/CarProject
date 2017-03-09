@@ -14,11 +14,6 @@
             </ul>
         </div>
         <div class="tab-content panel panel-primary col-md-12 col-sm-12">
-            <div class="navigationButtons btn-group col-md-12 col-sm-12">
-                <a class="btn btn-primary" ng-click="previousTab()">Anterior</a>
-                <a class="btn btn-primary" ng-click="nextTab()">Próximo</a>
-                <button type="button" class="btn btn-success" ng-click="register()">Cadastrar</button>
-            </div>
             <div id="information" role="tabpanel" class="registerForm panel-body col-md-12 col-sm-12 tab-pane fade in active">
                 <section ng-include="'./register/client/generalInformations.html'"></section>
             </div>
@@ -36,6 +31,11 @@
             </div>
             <div id="bank" role="tabpanel" class="registerForm panel-body col-md-12 col-sm-12 tab-pane fade">
                 <section ng-include="'./register/client/bank.html'"></section>
+            </div>
+            <div class="navigationButtons col-md-12 col-sm-12">
+                <a class="btn btn-primary" ng-click="previousTab()">Anterior</a>
+                <a class="btn btn-primary" ng-click="nextTab()">Próximo</a>
+                <button type="button" class="btn btn-success" ng-click="register()">Cadastrar</button>
             </div>
         </div>
     </div>
