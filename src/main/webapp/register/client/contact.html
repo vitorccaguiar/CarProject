@@ -9,15 +9,15 @@
     <div class="row">
         <div class="form-group col-md-3 col-sm-=5">
             <label for="inputHomePhoneNumber">Telefone Residencial</label>
-            <input id="inputHomePhoneNumber" name="inputHomePhoneNumber" type="text" class="form-control" placeholder="(xx) xxxxx-xxxx" mask="(99) 99999-9999" clean="true" ng-model="client.contacts[0].phoneNumber" limit/>
+            <input id="inputHomePhoneNumber" name="inputHomePhoneNumber" type="text" class="form-control" uiMaskPlaceholder ui-mask="(99) 99999-9999" ng-model="client.contacts[0].phoneNumber"/>
         </div>
         <div class="form-group col-md-3 col-sm-=5">
             <label for="inputCellPhoneNumber">Telefone Celular</label>
-            <input id="inputCellPhoneNumber" name="inputCellPhoneNumber" type="text" class="form-control" placeholder="(xx) xxxxx-xxxx" mask="(99) 99999-9999" clean="true" ng-model="client.contacts[1].phoneNumber" limit/>
+            <input id="inputCellPhoneNumber" name="inputCellPhoneNumber" type="text" class="form-control" uiMaskPlaceholder ui-mask="(99) 99999-9999" ng-model="client.contacts[1].phoneNumber"/>
         </div>
         <div class="form-group col-md-3 col-sm-=5">
             <label for="inputBusinessPhoneNumber">Telefone Comercial</label>
-            <input id="inputBusinessPhoneNumber" name="inputBusinessPhoneNumber" type="text" class="form-control" placeholder="(xx) xxxxx-xxxx" mask="(99) 99999-9999" clean="true" ng-model="client.contacts[2].phoneNumber" limit/>
+            <input id="inputBusinessPhoneNumber" name="inputBusinessPhoneNumber" type="text" class="form-control" uiMaskPlaceholder ui-mask="(99) 99999-9999" ng-model="client.contacts[2].phoneNumber"/>
         </div>
     </div>
 </form>

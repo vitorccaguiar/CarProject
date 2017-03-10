@@ -1,7 +1,7 @@
 angular.module('system', [
 
      "ngRoute",
-     "ngMask"
+     "ui.mask"
 ])
 
 .config(['$routeProvider', function($routeProvider){

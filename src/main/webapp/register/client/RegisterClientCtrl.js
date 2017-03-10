@@ -1,6 +1,8 @@
 var app = angular.module('system');
 
 app.controller('RegisterClientCtrl', function($scope, $http) {
+    $scope.type = "CPF";
+    $scope.registerMask = "999.999.999-99";
     $scope.client = {};
     $scope.requiredBankAccount = {};
     $scope.extraBankAccounts = [];
@@ -31,6 +33,17 @@ app.controller('RegisterClientCtrl', function($scope, $http) {
     
     $scope.removeReference = function(index) {
         $scope.extraReferences.splice(index, 1);
+    }
+    
+    $scope.changeType = function(type) {
+        $scope.type = type;
+        $scope.client.register = "";
+        if (type === "CPF") {
+            $scope.registerMask = "999.999.999-99";
+        }
+        if (type === "CNPJ") {
+            $scope.registerMask = "99.999.999/9999-99";
+        }
     }
 
     $scope.searchCep = function(index) {

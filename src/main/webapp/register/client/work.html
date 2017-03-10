@@ -34,27 +34,27 @@
     <div class="row">
         <div class="form-group col-md-2 col-sm-2">
             <label for="inputBusinessCep">CEP</label>
-            <input id="inputBusinessCep" name="inputBusinessCep" type="text" class="form-control" maxlength="9" placeholder="______-__" mask="99999-999" clean="true" ng-blur="searchCep(1)" ng-model="client.addresses[1].cep" required limit/>
+            <input id="inputBusinessCep" name="inputBusinessCep" type="text" class="form-control" maxlength="9" uiMaskPlaceholder ui-mask="99999-999" ng-change="searchCep(1)" ng-model-options="{debounce: 1000}" ng-model="client.addresses[1].cep" required/>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-md-1 col-sm-1">
             <label for="inputBusinessState">UF</label>
-            <input id="inputBusinessState" name="inputBusinessState" type="text" class="form-control" ng-model="client.addresses[1].state" disabled/>
+            <input id="inputBusinessState" name="inputBusinessState" type="text" class="form-control" ng-model="client.addresses[1].state"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputBusinessCity">Cidade</label>
-            <input id="inputBusinessCity" name="inputBusinessCity" type="text" class="form-control" ng-model="client.addresses[1].city" disabled/>
+            <input id="inputBusinessCity" name="inputBusinessCity" type="text" class="form-control" ng-model="client.addresses[1].city"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputBusinessNeighbourhood">Bairro</label>
-            <input id="inputBusinessNeighbourhood" name="inputBusinessNeighbourhood" type="text" class="form-control" ng-model="client.addresses[1].neighbourhood" disabled/>
+            <input id="inputBusinessNeighbourhood" name="inputBusinessNeighbourhood" type="text" class="form-control" ng-model="client.addresses[1].neighbourhood"/>
         </div>
     </div>
     <div class="row">
         <div class="form-group col-md-3 col-sm-4">
             <label for="inputBusinessStreetName">Logradouro</label>
-            <input id="inputBusinessStreetName" name="inputBusinessStreetName" type="text" class="form-control" ng-model="client.addresses[1].streetName" disabled/>
+            <input id="inputBusinessStreetName" name="inputBusinessStreetName" type="text" class="form-control" ng-model="client.addresses[1].streetName"/>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputBusinessComplement">Complemento</label>
