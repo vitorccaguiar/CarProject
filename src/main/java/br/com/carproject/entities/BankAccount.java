@@ -2,35 +2,19 @@ package br.com.carproject.entities;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "bank_account")
 public class BankAccount
 {
 
-    @Id
-    @Column(name = "id")
     private String id;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "agency_number")
     private String agencyNumber;
 
-    @Column(name = "account_number")
     private String accountNumber;
 
-    @Column(name = "registration_date")
     private Date registrationDate;
 
-    @Column(name = "change_date")
     private Date changeDate;
 
     private Client client;
@@ -95,8 +79,6 @@ public class BankAccount
         this.changeDate = changeDate;
     }
 
-    @OneToOne
-    @JoinColumn(name = "client_id")
     public Client getClient()
     {
         return client;

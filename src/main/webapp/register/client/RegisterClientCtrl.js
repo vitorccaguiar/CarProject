@@ -4,6 +4,8 @@ app.controller('RegisterClientCtrl', function($scope, $http) {
     $scope.type = "CPF";
     $scope.registerMask = "999.999.999-99";
     $scope.client = {};
+    $scope.cities = [];
+    $scope.notSelected = true;
     $scope.requiredBankAccount = {};
     $scope.extraBankAccounts = [];
     $scope.requiredReference = {};
@@ -50,16 +52,17 @@ app.controller('RegisterClientCtrl', function($scope, $http) {
         var cep = $scope.client.addresses[index].cep;
         var url = "http://viacep.com.br/ws/"+cep+"/json/";
 
-        $.getJSON(url, function(dadosRetorno) {
+        $.getJSON(url, function(returnedData) {
             try {
-                if (dadosRetorno.erro == true) {
+                if (returnedData.erro == true) {
                     window.alert("CEP não encontrado!");
                     $scope.clearCepFields(index);
                 }else {
-                    $scope.client.addresses[index].state = dadosRetorno.uf;
-                    $scope.client.addresses[index].city = dadosRetorno.localidade;
-                    $scope.client.addresses[index].neighbourhood = dadosRetorno.bairro;
-                    $scope.client.addresses[index].streetName = dadosRetorno.logradouro;
+                    $scope.client.addresses[index].state = returnedData.uf;
+                    $scope.cities.push({"name": returnedData.localidade})
+                    $scope.client.addresses[index].city = returnedData.localidade;
+                    $scope.client.addresses[index].neighbourhood = returnedData.bairro;
+                    $scope.client.addresses[index].streetName = returnedData.logradouro;
                     $scope.$apply();
                 }
             }catch(ex) {
@@ -73,10 +76,18 @@ app.controller('RegisterClientCtrl', function($scope, $http) {
         $scope.client.addresses[index].city = "";
         $scope.client.addresses[index].neighbourhood = "";
         $scope.client.addresses[index].streetName = "";
+        $scope.cities = [];
         $scope.$apply();
     }
     
+    $scope.listCities = function(uf) {
+        $http.get('address/city/' + uf).
+        then(function(response) {
+            $scope.cities = response.data;
+        });
+    }
+    
     $scope.register = function() {
-        $http.post('client/create', client);
+        $http.post('client/register', $scope.client);
     }
 });

@@ -2,10 +2,14 @@ package br.com.carproject.configurations;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan("br.com.projetocarro.controllers")
+@ComponentScan(basePackages = { "br.com.carproject.controllers", "br.com.carproject.services" })
+@EnableJpaRepositories("br.com.carproject.repositories")
+@EntityScan("br.com.carproject.entities")
 public class WebApplication
 {
 

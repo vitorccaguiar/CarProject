@@ -14,7 +14,7 @@ import br.com.carproject.entities.Client;
 public class ClientController
 {
 
-    @RequestMapping(value = "/register/client", method = RequestMethod.POST)
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public void registerClient(@RequestBody Client client)
     {

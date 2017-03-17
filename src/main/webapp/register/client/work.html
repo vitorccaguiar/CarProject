@@ -40,11 +40,41 @@
     <div class="row">
         <div class="form-group col-md-1 col-sm-1">
             <label for="inputBusinessState">UF</label>
-            <input id="inputBusinessState" name="inputBusinessState" type="text" class="form-control" ng-model="client.addresses[1].state"/>
+            <select id="inputBusinessState" class="form-control" ng-change="listCities(client.addresses[1].state)" ng-model="client.addresses[1].state">
+                <option value="">Selecione</option>
+                <option value="AC">AC</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AM">AM</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="DF">DF</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MT">MT</option>
+                <option value="MS">MS</option>
+                <option value="MG">MG</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RS">RS</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SP">SP</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+            </select>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputBusinessCity">Cidade</label>
-            <input id="inputBusinessCity" name="inputBusinessCity" type="text" class="form-control" ng-model="client.addresses[1].city"/>
+            <select id="inputBusinessCity" class="form-control" ng-options="city.name for city in cities" ng-model="client.addresses[1].city">
+            </select>
         </div>
         <div class="form-group col-md-2 col-sm-4">
             <label for="inputBusinessNeighbourhood">Bairro</label>
