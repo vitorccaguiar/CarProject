@@ -2,21 +2,74 @@ package br.com.carproject.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "address")
 public class Address
 {
 
+    @Id
+    @Column(name = "id")
+    private String id;
+
+    @Column(name = "type")
     private String type;
+
+    @Column(name = "street_name")
     private String streetName;
+
+    @Column(name = "complement")
     private String complement;
+
+    @Column(name = "neighbourhood")
     private String neighbourhood;
-    private String city;
-    private String state;
+
+    @Column(name = "cep")
     private String cep;
+
+    @Column(name = "has_own_house")
     private Boolean hasOwnHouse;
+
+    @Column(name = "value_of_the_house")
     private Double valueOfTheHouse;
+
+    @Column(name = "time_living")
     private Date timeLiving;
+
+    @Column(name = "registration_date")
     private Date registrationDate;
+
+    @Column(name = "change_date")
     private Date changeDate;
+
+    @OneToOne
+    @JoinColumn(name = "city_id")
+    private City city;
+
+    @OneToOne
+    @JoinColumn(name = "state_id")
+    private State state;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
+
+    public String getId()
+    {
+        return id;
+    }
+
+    public void setId(String id)
+    {
+        this.id = id;
+    }
 
     public String getType()
     {
@@ -56,26 +109,6 @@ public class Address
     public void setNeighbourhood(String neighbourhood)
     {
         this.neighbourhood = neighbourhood;
-    }
-
-    public String getCity()
-    {
-        return city;
-    }
-
-    public void setCity(String city)
-    {
-        this.city = city;
-    }
-
-    public String getState()
-    {
-        return state;
-    }
-
-    public void setState(String state)
-    {
-        this.state = state;
     }
 
     public String getCep()
@@ -136,6 +169,36 @@ public class Address
     public void setChangeDate(Date changeDate)
     {
         this.changeDate = changeDate;
+    }
+
+    public City getCity()
+    {
+        return city;
+    }
+
+    public void setCity(City city)
+    {
+        this.city = city;
+    }
+
+    public State getState()
+    {
+        return state;
+    }
+
+    public void setState(State state)
+    {
+        this.state = state;
+    }
+
+    public Client getClient()
+    {
+        return client;
+    }
+
+    public void setClient(Client client)
+    {
+        this.client = client;
     }
 
 }

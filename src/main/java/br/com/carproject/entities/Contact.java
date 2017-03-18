@@ -10,22 +10,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "bank_account")
-public class BankAccount
+@Table(name = "contact")
+public class Contact
 {
 
     @Id
     @Column(name = "id")
     private String id;
 
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "agency_number")
-    private String agencyNumber;
-
-    @Column(name = "account_number")
-    private String accountNumber;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
     @Column(name = "registration_date")
     private Date registrationDate;
@@ -37,6 +31,10 @@ public class BankAccount
     @JoinColumn(name = "client_id")
     private Client client;
 
+    @ManyToOne
+    @JoinColumn(name = "reference_id")
+    private Reference reference;
+
     public String getId()
     {
         return id;
@@ -47,34 +45,14 @@ public class BankAccount
         this.id = id;
     }
 
-    public String getName()
+    public String getPhoneNumber()
     {
-        return name;
+        return phoneNumber;
     }
 
-    public void setName(String name)
+    public void setPhoneNumber(String phoneNumber)
     {
-        this.name = name;
-    }
-
-    public String getAgencyNumber()
-    {
-        return agencyNumber;
-    }
-
-    public void setAgencyNumber(String agencyNumber)
-    {
-        this.agencyNumber = agencyNumber;
-    }
-
-    public String getAccountNumber()
-    {
-        return accountNumber;
-    }
-
-    public void setAccountNumber(String accountNumber)
-    {
-        this.accountNumber = accountNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     public Date getRegistrationDate()
@@ -105,6 +83,16 @@ public class BankAccount
     public void setClient(Client client)
     {
         this.client = client;
+    }
+
+    public Reference getReference()
+    {
+        return reference;
+    }
+
+    public void setReference(Reference reference)
+    {
+        this.reference = reference;
     }
 
 }

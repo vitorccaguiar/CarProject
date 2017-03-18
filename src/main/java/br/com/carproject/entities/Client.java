@@ -3,33 +3,99 @@ package br.com.carproject.entities;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "client")
 public class Client
 {
 
+    @Id
+    @Column(name = "id")
+    private String id;
+
+    @Column(name = "type")
     private String type;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "register")
     private String register;
+
+    @Column(name = "date_of_birth")
     private Date dateOfBirth;
+
+    @Column(name = "rg")
     private String rg;
+
+    @Column(name = "issuing_body")
     private String issuingBody;
+
+    @Column(name = "gender")
     private String gender;
+
+    @Column(name = "marital_status")
     private String maritalStatus;
-    private String cityOfBirth;
-    private String stateOfBirth;
-    private List<Address> address;
+
+    @Column(name = "father_name")
     private String fatherName;
+
+    @Column(name = "mother_name")
     private String motherName;
+
+    @Column(name = "company_name")
     private String companyName;
+
+    @Column(name = "time_working")
     private Date timeWorking;
+
+    @Column(name = "number_of_benefit")
     private String numberOfBenefit;
-    private Contacts contacts;
+
+    @Column(name = "monthly_income")
     private Double monthlyIncome;
+
+    @Column(name = "position")
     private String position;
-    // Falta referencia pessoal
-    private BankAccount bankAccount;
-    private Vehicle vehicle;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "registration_date")
     private Date registrationDate;
+
+    @Column(name = "change_date")
     private Date changeDate;
+
+    @OneToOne
+    @JoinColumn(name = "city_id")
+    private City cityOfBirth;
+
+    @OneToOne
+    @JoinColumn(name = "state_id")
+    private State stateOfBirth;
+
+    @ManyToMany
+    @JoinTable(name = "reference", joinColumns = @JoinColumn(name = "client_id"), inverseJoinColumns = @JoinColumn(name = "reference_id"))
+    private List<Reference> references;
+
+    public String getId()
+    {
+        return id;
+    }
+
+    public void setId(String id)
+    {
+        this.id = id;
+    }
 
     public String getType()
     {
@@ -111,36 +177,6 @@ public class Client
         this.maritalStatus = maritalStatus;
     }
 
-    public String getCityOfBirth()
-    {
-        return cityOfBirth;
-    }
-
-    public void setCityOfBirth(String cityOfBirth)
-    {
-        this.cityOfBirth = cityOfBirth;
-    }
-
-    public String getStateOfBirth()
-    {
-        return stateOfBirth;
-    }
-
-    public void setStateOfBirth(String stateOfBirth)
-    {
-        this.stateOfBirth = stateOfBirth;
-    }
-
-    public List<Address> getAddress()
-    {
-        return address;
-    }
-
-    public void setAddress(List<Address> address)
-    {
-        this.address = address;
-    }
-
     public String getFatherName()
     {
         return fatherName;
@@ -191,16 +227,6 @@ public class Client
         this.numberOfBenefit = numberOfBenefit;
     }
 
-    public Contacts getContacts()
-    {
-        return contacts;
-    }
-
-    public void setContacts(Contacts contacts)
-    {
-        this.contacts = contacts;
-    }
-
     public Double getMonthlyIncome()
     {
         return monthlyIncome;
@@ -221,24 +247,14 @@ public class Client
         this.position = position;
     }
 
-    public BankAccount getBankAccount()
+    public String getEmail()
     {
-        return bankAccount;
+        return email;
     }
 
-    public void setBankAccount(BankAccount bankAccount)
+    public void setEmail(String email)
     {
-        this.bankAccount = bankAccount;
-    }
-
-    public Vehicle getVehicle()
-    {
-        return vehicle;
-    }
-
-    public void setVehicle(Vehicle vehicle)
-    {
-        this.vehicle = vehicle;
+        this.email = email;
     }
 
     public Date getRegistrationDate()
@@ -259,5 +275,35 @@ public class Client
     public void setChangeDate(Date changeDate)
     {
         this.changeDate = changeDate;
+    }
+
+    public City getCityOfBirth()
+    {
+        return cityOfBirth;
+    }
+
+    public void setCityOfBirth(City cityOfBirth)
+    {
+        this.cityOfBirth = cityOfBirth;
+    }
+
+    public State getStateOfBirth()
+    {
+        return stateOfBirth;
+    }
+
+    public void setStateOfBirth(State stateOfBirth)
+    {
+        this.stateOfBirth = stateOfBirth;
+    }
+
+    public List<Reference> getReferences()
+    {
+        return references;
+    }
+
+    public void setReferences(List<Reference> references)
+    {
+        this.references = references;
     }
 }

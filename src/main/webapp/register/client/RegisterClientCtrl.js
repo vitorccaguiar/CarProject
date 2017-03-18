@@ -51,6 +51,7 @@ app.controller('RegisterClientCtrl', function($scope, $http) {
     $scope.searchCep = function(index) {
         var cep = $scope.client.addresses[index].cep;
         var url = "http://viacep.com.br/ws/"+cep+"/json/";
+        $scope.cities = [];
 
         $.getJSON(url, function(returnedData) {
             try {
